@@ -4,11 +4,30 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
 	<persistence-unit name="ORM">
+		<class>co.edu.ufps.cancha.entities.Administrador</class>
+		<class>co.edu.ufps.cancha.entities.AdministradorBodega</class>
+		<class>co.edu.ufps.cancha.entities.Bodega</class>
+		<class>co.edu.ufps.cancha.entities.Cajero</class>
+		<class>co.edu.ufps.cancha.entities.Cargo</class>
+		<class>co.edu.ufps.cancha.entities.Cliente</class>
+		<class>co.edu.ufps.cancha.entities.Compra</class>
+		<class>co.edu.ufps.cancha.entities.Consumible</class>
+		<class>co.edu.ufps.cancha.entities.Contrato</class>
+		<class>co.edu.ufps.cancha.entities.Empleado</class>
+		<class>co.edu.ufps.cancha.entities.Factura</class>
+		<class>co.edu.ufps.cancha.entities.Funcione</class>
+		<class>co.edu.ufps.cancha.entities.Implemento</class>
+		<class>co.edu.ufps.cancha.entities.Liquidacion</class>
+		<class>co.edu.ufps.cancha.entities.Producto</class>
+		<class>co.edu.ufps.cancha.entities.Proveedor</class>
+		<class>co.edu.ufps.cancha.entities.Reserva</class>
+		<class>co.edu.ufps.cancha.entities.Usuario</class>
 		
 		<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/cancha_bases"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mariadb://localhost:3306/canchabases"/>
 			<property name="javax.persistence.jdbc.user" value="root"/>
-			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+			<property name="javax.persistence.jdbc.password" value="1234"/>
+			<property name="javax.persistence.jdbc.driver" value="com.mariadb.jdbc.Driver"/>
 			<property name="javax.persistence.schema-generation.database.action" value="none"/>
 			<property name="hibernate.dialect" value=" org.hibernate.dialect.MariaDB53Dialect"/>
 			<property name="hibernate.show_sql" value="true"/>
