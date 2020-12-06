@@ -1,4 +1,4 @@
-package com.quantum.util;
+package co.edu.ufps.cancha.util;
 
 import java.util.*;
 

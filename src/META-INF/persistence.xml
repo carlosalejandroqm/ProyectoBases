@@ -4,22 +4,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
 	<persistence-unit name="ORM">
-		<class>com.quantum.entities.Administrador</class>
-		<class>com.quantum.entities.AdministradorBodega</class>
-		<class>com.quantum.entities.Bodega</class>
-		<class>com.quantum.entities.Cajero</class>
-		<class>com.quantum.entities.Cliente</class>
-		<class>com.quantum.entities.Consumible</class>
-		<class>com.quantum.entities.Contrato</class>
-		<class>com.quantum.entities.Empleado</class>
-		<class>com.quantum.entities.Factura</class>
-		<class>com.quantum.entities.Funcione</class>
-		<class>com.quantum.entities.Implemento</class>
-		<class>com.quantum.entities.Liquidacion</class>
-		<class>com.quantum.entities.Producto</class>
-		<class>com.quantum.entities.Reserva</class>
-		<class>com.quantum.entities.Usuario</class>
-
+		
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/cancha_bases"/>
 			<property name="javax.persistence.jdbc.user" value="root"/>
