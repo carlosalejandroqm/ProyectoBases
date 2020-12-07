@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,21 +32,35 @@
         <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto">
                 <h3 class="login-heading mb-4">Editar Cliente</h3>
-                <form>
-                    <div class="form-label-group">
-                        <input type="text" id="inputNombre"  name="nombre" class="form-control" placeholder="Nombre" required
+                <form action="${pageContext.request.contextPath}/ClienteServlet?action=editar" method="post">
+                     <div class="form-label-group">
+                        <input type="text" id="inputNombre"  name="id" class="form-control" value='<c:out value="${cliente.idCliente}"></c:out>'
+                        placeholder="Id" 
                             autofocus><br>
                     </div>
                     <div class="form-label-group">
-                        <input type="text" id="inputApellido"  name="apellido" class="form-control" placeholder="Apellido" required
+                        <input type="text" id="inputNombre"  name="nombre" class="form-control" value='<c:out value="${cliente.nombre}"></c:out>'
+                        placeholder="Nombre" required
+                            autofocus><br>
+                    </div>
+                    <div class="form-label-group">
+                        <input type="text" id="inputApellido"  name="apellido" class="form-control" value='<c:out value="${cliente.apellido}"></c:out>'
+                        placeholder="Apellido" required
                             autofocus> <br>
                     </div>
                     <div class="form-label-group">
-                        <input type="text" id="inputCorreo" name="correo"  class="form-control" placeholder="Correo" required
+                        <input type="text" id="inputCorreo" name="correo"  class="form-control" value='<c:out value="${cliente.correo}"></c:out>'
+                        placeholder="Correo" required
                             autofocus> <br>
                     </div>
                     <div class="form-label-group">
-                        <input type="text" id="inputEdad" name="telefono" class="form-control" placeholder="Telefono" required autofocus>
+                        <input type="text" id="inputEdad" name="nro_reservas" class="form-control" value='<c:out value="${cliente.nroReservas}"></c:out>'
+                        placeholder="Nro_reservas" required autofocus>
+                        <br>
+                    </div>
+                    <div class="form-label-group">
+                        <input type="text" id="inputEdad" name="telefono" class="form-control" value='<c:out value="${cliente.telefono}"></c:out>'
+                        placeholder="Telefono" required autofocus>
                         <br>
                     </div>
                    <a href="listaClientes.jsp">

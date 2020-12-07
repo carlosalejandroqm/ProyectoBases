@@ -175,12 +175,11 @@ public class ClienteServlet extends HttpServlet {
 		Cliente cliente = clienteDao.find(id);
 		Usuario usuario = cliente.getUsuario();
 		UsuarioDAO uDao = new UsuarioDAO();
-
+clienteDao.delete(cliente);
 		uDao.delete(usuario);
+		
 
-		clienteDao.delete(cliente);
-
-		RequestDispatcher dispatcher = request.getRequestDispatcher("EmpleadoServlet?action=mostrar");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("listaClientes.jsp");
 		dispatcher.forward(request, response);
 	}
 	

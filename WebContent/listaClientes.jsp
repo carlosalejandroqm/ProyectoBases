@@ -69,7 +69,7 @@
 					<td><%=c.getTelefono()%></td>
 					<td><%=c.getUsuario().getNombre()%></td>
 					<td><a
-						href="<%=request.getContextPath()%>/ClienteServlet?action=showedit&codigo=<%=c.getIdCliente()%>">Editar</a></td>&nbsp;&nbsp;&nbsp;&nbsp;
+						href="<%=request.getContextPath()%>/ClienteServlet?action=showedit&id=<%=c.getIdCliente()%>">Editar</a></td>&nbsp;&nbsp;&nbsp;&nbsp;
 					<td>	<a href="ClienteServlet?action=delete&id=<%=c.getIdCliente()%>">Eliminar</a></td>
 					<!-- } -->
 				</tr>
@@ -79,8 +79,10 @@
 			</tbody>
 		</table>
 		<div style="margin-bottom: 15px;">
-			<a href="crearReserva.html"><button type="submit"
-					class="btn btn-success" id="listado">Listado Clientes</button></a>
+			<a href="loginCliente.jsp"><button type="submit"
+					class="btn btn-success" id="listado">Ingresar</button></a>
+					<a href="registroCliente.jsp"><button type="submit"
+					class="btn btn-success" id="listado">Registrar</button></a>
 		</div>
 	</div>
 	<!--Modal-->
@@ -180,7 +182,7 @@
 						<!--Column1-->
 						<div class="footer-pad">
 							<h4 class="text-center">
-								<Strong>Â¿Que Somos?</Strong>
+								<Strong>¿Que Somos?</Strong>
 							</h4>
 							<ul class="list-unstyled">
 								<li class="text-center">
