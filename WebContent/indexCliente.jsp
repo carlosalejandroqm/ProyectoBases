@@ -102,7 +102,7 @@
                                     <h4 class="card-title">
                                         Para realizar la compra y ver existencia de productos 
                                     </h4>
-                                    <a href="productos/listarProdUsuario.html"><button type="button" class="btn btn-primary">Ir a productos</button></a>
+                                    <a href="productos/listarProdUsuario.jsp"><button type="button" class="btn btn-primary">Ir a productos</button></a>
                                 </div>
                             </div>
                         </div>

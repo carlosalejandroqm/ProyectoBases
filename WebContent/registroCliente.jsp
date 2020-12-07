@@ -31,7 +31,11 @@
         <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto">
                 <h3 class="login-heading mb-4">Registro Cliente</h3>
-                <form>
+                <form action="${pageContext.request.contextPath}/ClienteServlet?action=register" method="post">
+                    <div class="form-label-group">
+                        <input type="text" id="inputId"  name="id" class="form-control" placeholder="Id" required
+                            autofocus><br>
+                    </div>
                     <div class="form-label-group">
                         <input type="text" id="inputNombre"  name="nombre" class="form-control" placeholder="Nombre" required
                             autofocus><br>
@@ -48,11 +52,23 @@
                         <input type="text" id="inputEdad" name="telefono" class="form-control" placeholder="Telefono" required autofocus>
                         <br>
                     </div>
+                    <div class="form-label-group">
+                        <input type="text" id="inputUsuario" name="usuario" class="form-control" placeholder="Usuario" required autofocus>
+                        <br>
+                    </div>
+                    <div class="form-label-group">
+                        <input type="password" id="inputPass" name="pass" class="form-control" placeholder="Password" required autofocus>
+                        <br>
+                    </div>
                    <a href="loginCliente.jsp">
                     <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
                         type="submit">Registrar
                     </button>
+                    
                    </a>
+                   <div>
+                        ¿Estas registrado? <a href="loginCliente.jsp">Ingresar</a>
+                    </div>
                 </form>
             </div>
         </div>

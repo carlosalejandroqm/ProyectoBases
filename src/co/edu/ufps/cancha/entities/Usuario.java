@@ -5,6 +5,7 @@ import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -45,6 +46,9 @@ public class Usuario implements Serializable {
 	private Cargo cargo;
 
 	public Usuario() {
+		clientes = new ArrayList<Cliente>();
+		empleados = new ArrayList<Empleado>();
+		reservas = new ArrayList<Reserva>();
 	}
 
 	public Usuario(Integer idUsuario, String nombre, String claveUsuario, Cargo cargo) {

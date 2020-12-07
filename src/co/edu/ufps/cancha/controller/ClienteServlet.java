@@ -68,6 +68,10 @@ public class ClienteServlet extends HttpServlet {
 			case "editar":
 				update(request, response);
 				break;
+		    
+			case "login":
+				login(request, response);
+				break;
 
 			default:
 				list(request, response);
@@ -105,19 +109,19 @@ public class ClienteServlet extends HttpServlet {
 		
 		Cargo cg = cDao.find(4);
 		
-		Usuario us = new Usuario(null, request.getParameter("usuario"), request.getParameter("pass"), cg);
+		Usuario us = new Usuario(Integer.parseInt(request.getParameter("id")), request.getParameter("usuario"), request.getParameter("pass"), cg);
 
-		Cliente cliente = new Cliente(null, request.getParameter("nombre"), request.getParameter("apellido"),
-				request.getParameter("correo"), 0, request.getParameter("telefono"), us);
+		Cliente cliente = new Cliente(Integer.parseInt(request.getParameter("id")), request.getParameter("nombre"), request.getParameter("apellido"),
+				request.getParameter("correo"), 0, request.getParameter("telefono"), null);
 
-		if (!clienteDao.existeCliente(cliente)) {
+		if (clienteDao.find(cliente.getIdCliente())==null) {
 			uDao.insert(us);
+			cliente.setUsuario(us);
 			clienteDao.insert(cliente);
-			cg.addUsuario(us);
-			us.addCliente(cliente);
-			dispatcher = request.getRequestDispatcher("mostrar.jsp");
+
+			dispatcher = request.getRequestDispatcher("loginCliente.jsp");
 		}else {
-			dispatcher = request.getRequestDispatcher("mostrar.jsp");
+			dispatcher = request.getRequestDispatcher("registroCliente.jsp");
 			request.setAttribute("error", "El cliente ya existe");
 		}
 
@@ -128,7 +132,7 @@ public class ClienteServlet extends HttpServlet {
 			throws SQLException, IOException, ServletException {
 		List<Cliente> list = clienteDao.list();
 		request.setAttribute("list", list);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("mostrar.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("listaClientes.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -137,7 +141,7 @@ public class ClienteServlet extends HttpServlet {
 		Integer id = Integer.parseInt(request.getParameter("id"));
 		Cliente cliente = clienteDao.find(id);
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("editar.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("editarCliente.jsp");
 		request.setAttribute("cliente", cliente);
 		dispatcher.forward(request, response);
 	}
@@ -158,9 +162,9 @@ public class ClienteServlet extends HttpServlet {
 			cliente.setTelefono(request.getParameter("telefono"));
 		
 			clienteDao.update(cliente);
-			dispatcher = request.getRequestDispatcher("mostrar.jsp");
+			dispatcher = request.getRequestDispatcher("listaClientes.jsp");
 		} else {
-			dispatcher = request.getRequestDispatcher("mostrar.jsp");
+			dispatcher = request.getRequestDispatcher("listaClientes.jsp");
 		}
 		dispatcher.forward(request, response);
 	}
@@ -177,6 +181,31 @@ public class ClienteServlet extends HttpServlet {
 		clienteDao.delete(cliente);
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("EmpleadoServlet?action=mostrar");
+		dispatcher.forward(request, response);
+	}
+	
+	private void login(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, IOException, ServletException {
+
+		List<Cliente> list = clienteDao.list();
+
+		RequestDispatcher dispatcher = null;
+		String nombre = request.getParameter("nombre");
+		String pass = request.getParameter("pass");
+		boolean existe = false;
+		for (Cliente c : list) {
+			if (c.getUsuario().getNombre().equals(nombre) && c.getUsuario().getClaveUsuario().equals(pass)) {
+				existe = true;
+			}
+		}
+
+		if (existe) {
+			dispatcher = request.getRequestDispatcher("indexCliente.jsp");
+		} else {
+			dispatcher = request.getRequestDispatcher("loginCliente.jsp");
+			String mensaje = "No está registrado";
+			request.setAttribute("mensaje", mensaje);
+		}
 		dispatcher.forward(request, response);
 	}
 

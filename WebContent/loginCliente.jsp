@@ -31,14 +31,14 @@
         <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto">
                 <h3 class="login-heading mb-4">Portal Cliente</h3>
-                <form>
+                <form action="${pageContext.request.contextPath}/ClienteServlet?action=login" method="post">
                     <div class="form-label-group">
-                        <input type="email" id="inputEmail" class="form-control" placeholder="Digite correo o usuario"
-                            required autofocus>
+                        <input type="text" id="inputEmail" class="form-control" placeholder="Digite correo o usuario"
+                            name="nombre" required autofocus>
                         <label for="inputEmail">Nombre Cliente</label>
                     </div>
                     <div class="form-label-group">
-                        <input type="password" id="inputPassword" class="form-control"
+                        <input type="password" id="inputPassword" class="form-control" name="pass"
                             placeholder="Digite su Contraseña" required>
                         <label for="inputPassword">Contraseña Cliente</label>
                     </div>
@@ -50,7 +50,7 @@
                     <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
                         type="submit">Ingresar</button>
                     <div>
-                        ¿No estas registrado? <a href="#">Crear una cuenta</a>
+                        ¿No estas registrado? <a href="registroCliente.jsp">Crear una cuenta</a>
                     </div>
 
                 </form>
