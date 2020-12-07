@@ -1,0 +1,26 @@
+
+header{
+  background-color:teal;
+  color: white;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+
+}
+
+h1{
+  font-family: 'Kaushan Script' , cursive;
+  font-size:xx-large;
+
+}
+
+p{
+  line-height: 1.75;
+  font-family: 'Open Sans', sans-serif;
+}
+
+footer{
+  margin-top: 20px;
+  margin-bottom: 0px;
+  background-color:teal;
+  color: white;
+}
