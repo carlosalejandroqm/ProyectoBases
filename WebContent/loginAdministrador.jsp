@@ -33,22 +33,24 @@
                 <h3 class="login-heading mb-4">Portal Administrador</h3>
                 <form>
                     <div class="form-label-group">
-                        <input type="email" id="inputEmail" class="form-control" placeholder="Digite correo o usuario"
+                        <input type="email" id="inputEmail"  name="nombre" class="form-control" placeholder="Digite correo o usuario"
                             required autofocus>
                         <label for="inputEmail">Nombre Administrador</label>
                     </div>
                     <div class="form-label-group">
-                        <input type="password" id="inputPassword" class="form-control"
-                            placeholder="Digite su Contrase�a" required>
-                        <label for="inputPassword">Contrase�a Administrador</label>
+                        <input type="password" id="inputPassword"  name="contraseña" class="form-control"
+                            placeholder="Digite su Contraseña" required>
+                        <label for="inputPassword">Contraseña Administrador</label>
                     </div>
 
                     <div class="custom-control custom-checkbox mb-3">
                         <input type="checkbox" class="custom-control-input" id="customCheck1">
-                        <label class="custom-control-label" for="customCheck1">Recordar Contrase�a</label>
+                        <label class="custom-control-label" for="customCheck1">Recordar Contraseña</label>
                     </div>
+                    <a href="indexAdministrador.jsp">
                     <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
                         type="submit">Ingresar</button>
+                     </a>   
                 </form>
             </div>
         </div>
@@ -81,7 +83,7 @@
                         <!--Column1-->
                         <div class="footer-pad">
                             <h4 class="text-center">
-                                <Strong>�Que Somos?</Strong>
+                                <Strong>¿Que Somos?</Strong>
                             </h4>
                             <ul class="list-unstyled">
                                 <li class="text-center">
