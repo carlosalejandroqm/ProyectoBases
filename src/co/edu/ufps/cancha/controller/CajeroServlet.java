@@ -3,6 +3,7 @@ package co.edu.ufps.cancha.controller;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -66,6 +67,10 @@ public class CajeroServlet extends HttpServlet {
 				showEditForm(request, response);
 				break;
 
+			case "editar":
+				update(request, response);
+				break;
+
 			default:
 				list(request, response);
 				break;
@@ -126,7 +131,11 @@ public class CajeroServlet extends HttpServlet {
 	private void list(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
 		List<Cajero> list = cajeroDao.list();
-		request.setAttribute("list", list);
+		List<Empleado> listEm = new ArrayList<>();
+		for(Cajero c: list) {
+		   listEm.add(eDao.find(c.getIdEmpleado()));
+		}
+		request.setAttribute("list", listEm);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("mostrar.jsp");
 		dispatcher.forward(request, response);
 	}
@@ -138,6 +147,32 @@ public class CajeroServlet extends HttpServlet {
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("editar.jsp");
 		request.setAttribute("cajero", cajero);
+		dispatcher.forward(request, response);
+	}
+
+	private void update(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, IOException, ParseException, ServletException {
+		RequestDispatcher dispatcher = null;
+		Integer id = Integer.parseInt(request.getParameter("id"));
+
+		Cajero cajero = cajeroDao.find(id);
+		
+		if (cajero != null) {
+			Empleado e= eDao.find(cajero.getIdEmpleado());
+			e.setDni(request.getParameter("dni"));
+			e.setNombre(request.getParameter("nombre"));
+			e.setApellido(request.getParameter("apellido"));
+			e.setCorreo(request.getParameter("correo"));
+			e.setHorasExtra(Integer.parseInt(request.getParameter("horas")));
+			e.setTelefono(Integer.parseInt(request.getParameter("telefono")));
+			e.setCargoBean(e.getCargoBean());
+			e.setUsuario(e.getUsuario());
+			
+			dispatcher = request.getRequestDispatcher("mostrar.jsp");
+		} else {
+			dispatcher = request.getRequestDispatcher("mostrar.jsp");
+			request.setAttribute("error", "El cajero no existe");
+		}
 		dispatcher.forward(request, response);
 	}
 

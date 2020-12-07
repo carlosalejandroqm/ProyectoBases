@@ -36,6 +36,13 @@ public class Consumible implements Serializable {
 	public Consumible() {
 	}
 
+	public Consumible(Integer idProducto, Date fechaVencimiento, Integer precio) {
+		super();
+		this.idProducto = idProducto;
+		this.fechaVencimiento = fechaVencimiento;
+		this.precio = precio;
+	}
+	
 	public Integer getIdProducto() {
 		return this.idProducto;
 	}
@@ -67,5 +74,9 @@ public class Consumible implements Serializable {
 	public void setProducto(Producto producto) {
 		this.producto = producto;
 	}
+
+
+
+	
 
 }

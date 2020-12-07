@@ -3,6 +3,7 @@ package co.edu.ufps.cancha.controller;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -19,6 +20,7 @@ import co.edu.ufps.cancha.dao.UsuarioDAO;
 import co.edu.ufps.cancha.entities.Cargo;
 import co.edu.ufps.cancha.entities.Empleado;
 import co.edu.ufps.cancha.entities.Administrador;
+import co.edu.ufps.cancha.entities.Cajero;
 import co.edu.ufps.cancha.entities.Usuario;
 
 /**
@@ -137,7 +139,11 @@ public class AdministradorServlet extends HttpServlet {
 	private void list(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
 		List<Administrador> list = adminDao.list();
-		request.setAttribute("list", list);
+		List<Empleado> listEm = new ArrayList<>();
+		for(Administrador a: list) {
+		   listEm.add(a.getEmpleado());
+		}
+		request.setAttribute("list", listEm);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("mostrar.jsp");
 		dispatcher.forward(request, response);
 	}

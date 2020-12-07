@@ -57,6 +57,15 @@ public class Producto implements Serializable {
 	public Producto() {
 	}
 
+	public Producto(Integer idProducto, String nombre, String descripcion, Integer cantidad, Bodega bodega) {
+		super();
+		this.idProducto = idProducto;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.cantidad = cantidad;
+		this.bodega = bodega;
+	}
+	
 	public Integer getIdProducto() {
 		return this.idProducto;
 	}
@@ -120,5 +129,8 @@ public class Producto implements Serializable {
 	public void setProveedors(List<Proveedor> proveedors) {
 		this.proveedors = proveedors;
 	}
+
+
+	
 
 }
