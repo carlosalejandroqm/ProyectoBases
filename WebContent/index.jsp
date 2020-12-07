@@ -54,7 +54,7 @@
                                 <div class="card-body text-center mt-4">
                                     <h4 class="card-title">Si eres Administrador de Las canchas sinteticas la Catedral
                                         del
-                                        fútbol
+                                        fÃºtbol
                                     </h4>
                                     <a href="loginAdministrador.html"><button type="button" class="btn btn-primary">Ir
                                             al Login</button></a>
@@ -85,7 +85,7 @@
                                 <div class="card-body text-center mt-4">
                                     <h4 class="card-title">Si eres Administrador de las bodegas y el inventario de Las
                                         canchas sinteticas la Catedral del
-                                        fútbol
+                                        fÃºtbol
                                     </h4>
                                     <a href="#"><button type="button" class="btn btn-primary">Ir al Login</button></a>
                                 </div>
@@ -154,7 +154,7 @@
                         <!--Column1-->
                         <div class="footer-pad">
                             <h4 class="text-center">
-                                <Strong>¿Que Somos?</Strong>
+                                <Strong>Â¿Que Somos?</Strong>
                             </h4>
                             <ul class="list-unstyled">
                                 <li class="text-center">
