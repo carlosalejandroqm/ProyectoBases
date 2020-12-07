@@ -33,15 +33,15 @@
                 <h3 class="login-heading mb-4">Registro Producto</h3>
                 <form>
                     <div class="form-label-group">
-                        <input type="text" id="inputNombre" class="form-control" placeholder="Nombre" required
+                        <input type="text" id="inputNombre" name="nombre"  class="form-control" placeholder="Nombre" required
                             autofocus><br>
                     </div>
                     <div class="form-label-group">
-                        <input type="text" id="inputDescripcion" class="form-control" placeholder="Descripcion" required
+                        <input type="text" id="inputDescripcion"  name="descripcion"  class="form-control" placeholder="Descripcion" required
                             autofocus> <br>
                     </div>
                     <div class="form-label-group">
-                        <input type="text" id="inputPrecio" class="form-control" placeholder="Precio" required
+                        <input type="text" id="inputPrecio" name="cantidad"  class="form-control" placeholder="Cantidad" required
                             autofocus> <br>
                     </div>
                     <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
@@ -76,7 +76,7 @@
                         <!--Column1-->
                         <div class="footer-pad">
                             <h4 class="text-center">
-                                <Strong>¿Que Somos?</Strong>
+                                <Strong>Â¿Que Somos?</Strong>
                             </h4>
                             <ul class="list-unstyled">
                                 <li class="text-center">
