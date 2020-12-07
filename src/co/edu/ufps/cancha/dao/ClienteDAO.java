@@ -8,8 +8,14 @@ public class ClienteDAO extends Conexion<Cliente> implements GenericDAO<Cliente>
 	public ClienteDAO(){
 		super(Cliente.class);
 	}
-	public static void main(String[] args) {
-		ClienteDAO c = new ClienteDAO();
-		System.out.println(c.list());
+	
+	public boolean existeCliente(Cliente cliente) {
+  
+	  for(Cliente c: this.list()) {
+		  if(cliente.getUsuario().equals(c.getUsuario())) {
+			  return true;
+		  }
+	  }
+	  return false;
 	}
 }
