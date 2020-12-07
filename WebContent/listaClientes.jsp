@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Author" content="King of Seeven Kingdoms">
     <meta name="description" content="login para usuarios y administradores">
-    <title>Login para los clientes de las canchas sinteticascanchas sinteticas</title>
+    <title>Listado de reservas</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -27,30 +28,101 @@
             <center>Un sistema que gestiona toda la informacion de tu cancha sintetica forma gratuita y libre</center>
         </p>
     </header>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-9 col-lg-8 mx-auto">
-                <h3 class="login-heading mb-4">Registro Producto</h3>
-                <form>
-                    <div class="form-label-group">
-                        <input type="text" id="inputNombre" name="nombre"  class="form-control" placeholder="Nombre" required
-                            autofocus><br>
-                    </div>
-                    <div class="form-label-group">
-                        <input type="text" id="inputDescripcion"  name="descripcion"  class="form-control" placeholder="Descripcion" required
-                            autofocus> <br>
-                    </div>
-                    <div class="form-label-group">
-                        <input type="text" id="inputPrecio" name="cantidad"  class="form-control" placeholder="Cantidad" required
-                            autofocus> <br>
-                    </div>
-                    <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
-                        type="submit">Registrar
-                    </button>
-                </form>
+    <div class="container text-center mt-4">
+        <h3>Listado de Clientes</h3>
+      </div>
+      <div class="container">
+                      
+        <table class="table table-bordered table-hover"><br>
+          <thead class="text-center">
+            <tr>
+                                     
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Correo</th>
+            <th>Telefono</th>
+            <th>Usuario</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+            </tr>
+            </thead>
+            <tbody>                                      
+            <td class="text-center">
+            <a data-toggle="modal" data-target="#exampleModal" href="#" onclick="">
+            <i class="fas fa-edit"></i></a></td>
+            <td class="text-center"><a href="#" data-toggle="modal" data-target="#exampleModal2" onclick="">
+            <i class="fas fa-trash" style="color:#d32f2f;"></i></a></td>
+            </tr>
+    
+          </tbody>
+          </table>
+          <div style="margin-bottom: 15px;">
+                 <a href="crearReserva.html"><button type="submit" class="btn btn-success" id="listado">Listado Clientes</button></a>
+          </div>
+      </div>
+      <!--Modal-->
+      <div class="modal fade" id="exampleModal" data-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Editar Producto</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
+            <div class="modal-body">
+          
+            <form action="" method="POST">
+            <div class="form-group row">
+                  <label for="inputNombre" class="col-sm-2 col-form-label">Correo</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="correo"  id="inputNombre">
+                  </div>
+                </div>
+              <div class="form-group row">
+                <label for="inputDescripcion" class="col-sm-2 col-form-label">Telefono</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="telefono" id="inputDescripcion">
+                </div>
+              </div>
+                <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Usuario</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control"  name="usuario" id="inputPrecio">
+                </div>
+              </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" id="guardar" class="btn btn-primary" >Guardar cambios</button> 
+                 </div>
+              </form>
+            </div>
+          </div>
         </div>
-    </div>
+        </div>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal2" tabindex="-1" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="eliminarProducto.php" method="POST">
+               ¿Desea eliminar este producto?
+               <p id="espacio2"></p>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Eliminar</button>
+            </div>
+              </form>
+              </div>
+          </div>
+        </div>
+      </div>
     <footer class="mainfooter" role="contentinfo">
         <div class="footer-middle">
             <div class="container">

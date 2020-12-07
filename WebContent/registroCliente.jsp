@@ -33,36 +33,26 @@
                 <h3 class="login-heading mb-4">Registro Cliente</h3>
                 <form>
                     <div class="form-label-group">
-                        <input type="text" id="inputNombre" class="form-control" placeholder="Nombre" required
+                        <input type="text" id="inputNombre"  name="nombre" class="form-control" placeholder="Nombre" required
                             autofocus><br>
                     </div>
                     <div class="form-label-group">
-                        <input type="text" id="inputApellido" class="form-control" placeholder="Apellido" required
+                        <input type="text" id="inputApellido"  name="apellido" class="form-control" placeholder="Apellido" required
                             autofocus> <br>
                     </div>
                     <div class="form-label-group">
-                        <input type="text" id="inputCorreo" class="form-control" placeholder="Correo" required
+                        <input type="text" id="inputCorreo" name="correo"  class="form-control" placeholder="Correo" required
                             autofocus> <br>
                     </div>
                     <div class="form-label-group">
-                        <input type="text" id="inputEdad" class="form-control" placeholder="Edad" required autofocus>
+                        <input type="text" id="inputEdad" name="telefono" class="form-control" placeholder="Telefono" required autofocus>
                         <br>
                     </div>
-                    <div class="form-label-group">
-                        <input type="text" id="inputTelefono" class="form-control" placeholder="Telefono" required
-                            autofocus> <br>
-                    </div>
-                    <div class="form-label-group">
-                        <input type="text" id="inputUsuario" class="form-control" placeholder="Usuario" required
-                            autofocus> <br>
-                    </div>
-                    <div class="form-label-group">
-                        <input type="password" id="inputContraseña" class="form-control" placeholder="Contraseña" required
-                            autofocus> <br>
-                    </div>
+                   <a href="loginCliente.jsp">
                     <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
                         type="submit">Registrar
                     </button>
+                   </a>
                 </form>
             </div>
         </div>
@@ -92,7 +82,7 @@
                         <!--Column1-->
                         <div class="footer-pad">
                             <h4 class="text-center">
-                                <Strong>¿Que Somos?</Strong>
+                                <Strong>Â¿Que Somos?</Strong>
                             </h4>
                             <ul class="list-unstyled">
                                 <li class="text-center">
