@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Author" content="King of Seeven Kingdoms">
     <meta name="description" content="login para usuarios y administradores">
-    <title>Login para los Administradors de las canchas sinteticascanchas sinteticas</title>
+    <title>Login para los clientes de las canchas sinteticascanchas sinteticas</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -24,39 +24,40 @@
             <center>D.A.S Canchas </center>
         </h1>
         <p>
-            <center>Un sistema que gestiona toda la informacion de tu cancha sintetica de forma gratuita y libre</center>
+            <center>Un sistema que gestiona toda la informacion de tu cancha sintetica forma gratuita y libre</center>
         </p>
     </header>
     <div class="container">
         <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto">
-                <h3 class="login-heading mb-4">Portal Administrador</h3>
+                <h3 class="login-heading mb-4">Editar Cliente</h3>
                 <form>
                     <div class="form-label-group">
-                        <input type="email" id="inputEmail"  name="nombre" class="form-control" placeholder="Digite correo o usuario"
-                            required autofocus>
-                        <label for="inputEmail">Nombre Administrador</label>
+                        <input type="text" id="inputNombre"  name="nombre" class="form-control" placeholder="Nombre" required
+                            autofocus><br>
                     </div>
                     <div class="form-label-group">
-                        <input type="password" id="inputPassword"  name="contraseña" class="form-control"
-                            placeholder="Digite su Contraseña" required>
-                        <label for="inputPassword">Contraseña Administrador</label>
+                        <input type="text" id="inputApellido"  name="apellido" class="form-control" placeholder="Apellido" required
+                            autofocus> <br>
                     </div>
-
-                    <div class="custom-control custom-checkbox mb-3">
-                        <input type="checkbox" class="custom-control-input" id="customCheck1">
-                        <label class="custom-control-label" for="customCheck1">Recordar Contraseña</label>
+                    <div class="form-label-group">
+                        <input type="text" id="inputCorreo" name="correo"  class="form-control" placeholder="Correo" required
+                            autofocus> <br>
                     </div>
-                    <a href="indexAdministrador.jsp">
+                    <div class="form-label-group">
+                        <input type="text" id="inputEdad" name="telefono" class="form-control" placeholder="Telefono" required autofocus>
+                        <br>
+                    </div>
+                   <a href="listaClientes.jsp">
                     <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
-                        type="submit">Ingresar</button>
-                     </a>   
+                        type="submit">Editar
+                    </button>
+                   </a>
                 </form>
             </div>
         </div>
     </div>
     <footer class="mainfooter" role="contentinfo">
-
         <div class="footer-middle">
             <div class="container">
                 <div class="row">
@@ -74,8 +75,6 @@
                                 <li class="text-center">dubanyesids@ufps.edu.co</li>
                                 <li class="text-center">juansebastiansp@ufps.edu.co</li>
                                 <li class="text-center">carlosalejandroqm@ufps.edu.co</li>
-
-
                             </ul>
                         </div>
                     </div>

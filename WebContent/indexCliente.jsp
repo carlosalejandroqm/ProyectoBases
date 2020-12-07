@@ -71,7 +71,7 @@
                                     <h4 class="card-title">
                                         Para realizar, actualizar o eliminar tus reservas
                                     </h4>
-                                    <a href="reservas/listarReserva.html"><button type="button" class="btn btn-primary">
+                                    <a href="reservas/listarReserva.jsp"><button type="button" class="btn btn-primary">
                                         Ir a reservas
                                     </button></a>
                                 </div>
@@ -171,7 +171,7 @@
                         <!--Column1-->
                         <div class="footer-pad">
                             <h4 class="text-center">
-                                <Strong>¿Que Somos?</Strong>
+                                <Strong>Â¿Que Somos?</Strong>
                             </h4>
                             <ul class="list-unstyled">
                                 <li class="text-center">
