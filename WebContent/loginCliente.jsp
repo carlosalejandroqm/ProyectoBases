@@ -39,18 +39,18 @@
                     </div>
                     <div class="form-label-group">
                         <input type="password" id="inputPassword" class="form-control"
-                            placeholder="Digite su Contraseña" required>
-                        <label for="inputPassword">Contraseña Cliente</label>
+                            placeholder="Digite su ContraseÃ±a" required>
+                        <label for="inputPassword">ContraseÃ±a Cliente</label>
                     </div>
 
                     <div class="custom-control custom-checkbox mb-3">
                         <input type="checkbox" class="custom-control-input" id="customCheck1">
-                        <label class="custom-control-label" for="customCheck1">Recordar Contraseña</label>
+                        <label class="custom-control-label" for="customCheck1">Recordar ContraseÃ±a</label>
                     </div>
                     <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
                         type="submit">Ingresar</button>
                     <div>
-                        ¿No estas registrado? <a href="#">Crear una cuenta</a>
+                        Â¿No estas registrado? <a href="registroCliente.jsp">Crear una cuenta</a>
                     </div>
 
                 </form>
@@ -85,7 +85,7 @@
                         <!--Column1-->
                         <div class="footer-pad">
                             <h4 class="text-center">
-                                <Strong>¿Que Somos?</Strong>
+                                <Strong>Â¿Que Somos?</Strong>
                             </h4>
                             <ul class="list-unstyled">
                                 <li class="text-center">
