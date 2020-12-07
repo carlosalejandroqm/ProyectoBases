@@ -12,36 +12,37 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.edu.ufps.cancha.dao.CajeroDAO;
 import co.edu.ufps.cancha.dao.CargoDAO;
-import co.edu.ufps.cancha.dao.ClienteDAO;
+import co.edu.ufps.cancha.dao.EmpleadoDAO;
 import co.edu.ufps.cancha.dao.UsuarioDAO;
+import co.edu.ufps.cancha.entities.Administrador;
+import co.edu.ufps.cancha.entities.Cajero;
 import co.edu.ufps.cancha.entities.Cargo;
-import co.edu.ufps.cancha.entities.Cliente;
+import co.edu.ufps.cancha.entities.Empleado;
 import co.edu.ufps.cancha.entities.Usuario;
 
 /**
- * Servlet implementation class ClienteServlet
+ * Servlet implementation class CajeroServlet
  */
-@WebServlet("/ClienteServlet")
-public class ClienteServlet extends HttpServlet {
+@WebServlet("/CajeroServlet")
+public class CajeroServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-	private ClienteDAO clienteDao;
-
-	public ClienteServlet() {
-		super();
-	}
-
-	public void init() {
-
-		clienteDao = new ClienteDAO();
-	}
+       
+	private CajeroDAO cajeroDao = new CajeroDAO();
+	private EmpleadoDAO eDao = new EmpleadoDAO();
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public CajeroServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String action = request.getParameter("action");
 
@@ -65,10 +66,6 @@ public class ClienteServlet extends HttpServlet {
 				showEditForm(request, response);
 				break;
 
-			case "editar":
-				update(request, response);
-				break;
-
 			default:
 				list(request, response);
 				break;
@@ -80,17 +77,14 @@ public class ClienteServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
+	
 	private void showNewForm(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("registro.jsp");
@@ -102,23 +96,28 @@ public class ClienteServlet extends HttpServlet {
 		RequestDispatcher dispatcher = null;
 		UsuarioDAO uDao = new UsuarioDAO();
 		CargoDAO cDao = new CargoDAO();
-		
-		Cargo cg = cDao.find(4);
-		
+
+		Cargo cg = cDao.find(2);
 		Usuario us = new Usuario(null, request.getParameter("usuario"), request.getParameter("pass"), cg);
-
-		Cliente cliente = new Cliente(null, request.getParameter("nombre"), request.getParameter("apellido"),
-				request.getParameter("correo"), 0, request.getParameter("telefono"), us);
-
-		if (!clienteDao.existeCliente(cliente)) {
+		
+		Empleado em =new Empleado(null, request.getParameter("dni"), request.getParameter("nombre"), request.getParameter("apellido"),
+				request.getParameter("correo"), Integer.parseInt(request.getParameter("horas")), Integer.parseInt(request.getParameter("telefono")), null, null,
+				cg, us);
+		
+		if (!uDao.existeUsuario(us.getNombre())) {
 			uDao.insert(us);
-			clienteDao.insert(cliente);
-			cg.addUsuario(us);
-			us.addCliente(cliente);
+			eDao.insert(em);
+			
+			Empleado e = eDao.encontrarEmpleado(em);
+			
+			Cajero cajero = new Cajero(e.getIdEmpleado());
+			
+			eDao.update(e);
+			cajeroDao.insert(cajero);
 			dispatcher = request.getRequestDispatcher("mostrar.jsp");
 		}else {
 			dispatcher = request.getRequestDispatcher("mostrar.jsp");
-			request.setAttribute("error", "El cliente ya existe");
+			request.setAttribute("error", "El cajero ya existe");
 		}
 
 		dispatcher.forward(request, response);
@@ -126,7 +125,7 @@ public class ClienteServlet extends HttpServlet {
 
 	private void list(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
-		List<Cliente> list = clienteDao.list();
+		List<Cajero> list = cajeroDao.list();
 		request.setAttribute("list", list);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("mostrar.jsp");
 		dispatcher.forward(request, response);
@@ -135,46 +134,22 @@ public class ClienteServlet extends HttpServlet {
 	private void showEditForm(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ServletException, IOException {
 		Integer id = Integer.parseInt(request.getParameter("id"));
-		Cliente cliente = clienteDao.find(id);
+		Cajero cajero = cajeroDao.find(id);
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("editar.jsp");
-		request.setAttribute("cliente", cliente);
-		dispatcher.forward(request, response);
-	}
-
-	private void update(HttpServletRequest request, HttpServletResponse response)
-			throws SQLException, IOException, ParseException, ServletException {
-		RequestDispatcher dispatcher = null;
-		Integer id = Integer.parseInt(request.getParameter("id"));
-
-		Cliente cliente = clienteDao.find(id);
-
-		if (cliente != null) {
-
-			cliente.setNombre(request.getParameter("nombre"));
-			cliente.setApellido(request.getParameter("apellido"));
-			cliente.setCorreo(request.getParameter("correo"));
-			cliente.setNroReservas(Integer.parseInt(request.getParameter("nro_reservas")));
-			cliente.setTelefono(request.getParameter("telefono"));
-		
-			clienteDao.update(cliente);
-			dispatcher = request.getRequestDispatcher("mostrar.jsp");
-		} else {
-			dispatcher = request.getRequestDispatcher("mostrar.jsp");
-		}
+		request.setAttribute("cajero", cajero);
 		dispatcher.forward(request, response);
 	}
 
 	private void delete(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
 		Integer id = Integer.parseInt(request.getParameter("id"));
-		Cliente cliente = clienteDao.find(id);
-		Usuario usuario = cliente.getUsuario();
-		UsuarioDAO uDao = new UsuarioDAO();
+		Cajero cajero = cajeroDao.find(id);
+		Empleado empleado = eDao.find(cajero.getIdEmpleado());
 
-		uDao.delete(usuario);
+		eDao.delete(empleado);
 
-		clienteDao.delete(cliente);
+		cajeroDao.delete(cajero);
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("EmpleadoServlet?action=mostrar");
 		dispatcher.forward(request, response);
