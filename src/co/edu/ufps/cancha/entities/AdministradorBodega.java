@@ -1,7 +1,11 @@
+  
 package co.edu.ufps.cancha.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import lombok.AllArgsConstructor;
+
 import java.util.List;
 
 
@@ -9,6 +13,7 @@ import java.util.List;
  * The persistent class for the administrador_bodega database table.
  * 
  */
+@AllArgsConstructor
 @Entity
 @Table(name="administrador_bodega")
 @NamedQuery(name="AdministradorBodega.findAll", query="SELECT a FROM AdministradorBodega a")
@@ -17,7 +22,7 @@ public class AdministradorBodega implements Serializable {
 
 	@Id
 	@Column(name="id_empleado")
-	private int idEmpleado;
+	private Integer idEmpleado;
 
 	@Column(name="clave_bodega")
 	private String claveBodega;
@@ -33,12 +38,19 @@ public class AdministradorBodega implements Serializable {
 
 	public AdministradorBodega() {
 	}
+	
+	public AdministradorBodega(Integer idEmpleado, String claveBodega, Empleado empleado) {
+		super();
+		this.idEmpleado = idEmpleado;
+		this.claveBodega = claveBodega;
+		this.empleado = empleado;
+	}
 
-	public int getIdEmpleado() {
+	public Integer getIdEmpleado() {
 		return this.idEmpleado;
 	}
 
-	public void setIdEmpleado(int idEmpleado) {
+	public void setIdEmpleado(Integer idEmpleado) {
 		this.idEmpleado = idEmpleado;
 	}
 
@@ -79,5 +91,7 @@ public class AdministradorBodega implements Serializable {
 
 		return bodega;
 	}
+
+
 
 }

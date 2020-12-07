@@ -2,6 +2,9 @@ package co.edu.ufps.cancha.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import lombok.AllArgsConstructor;
+
 import java.util.Date;
 
 
@@ -9,6 +12,7 @@ import java.util.Date;
  * The persistent class for the reserva database table.
  * 
  */
+@AllArgsConstructor
 @Entity
 @NamedQuery(name="Reserva.findAll", query="SELECT r FROM Reserva r")
 public class Reserva implements Serializable {
@@ -16,7 +20,7 @@ public class Reserva implements Serializable {
 
 	@Id
 	@Column(name="id_reserva")
-	private int idReserva;
+	private Integer idReserva;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="fecha_inicio")
@@ -27,7 +31,7 @@ public class Reserva implements Serializable {
 	private Date fechaSalida;
 
 	@Column(name="id_factura")
-	private int idFactura;
+	private Integer idFactura;
 
 	@Column(name="tipo_cancha")
 	private String tipoCancha;
@@ -45,11 +49,11 @@ public class Reserva implements Serializable {
 	public Reserva() {
 	}
 
-	public int getIdReserva() {
+	public Integer getIdReserva() {
 		return this.idReserva;
 	}
 
-	public void setIdReserva(int idReserva) {
+	public void setIdReserva(Integer idReserva) {
 		this.idReserva = idReserva;
 	}
 
@@ -69,11 +73,11 @@ public class Reserva implements Serializable {
 		this.fechaSalida = fechaSalida;
 	}
 
-	public int getIdFactura() {
+	public Integer getIdFactura() {
 		return this.idFactura;
 	}
 
-	public void setIdFactura(int idFactura) {
+	public void setIdFactura(Integer idFactura) {
 		this.idFactura = idFactura;
 	}
 

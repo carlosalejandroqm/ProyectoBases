@@ -1,13 +1,18 @@
 package co.edu.ufps.cancha.entities;
 
 import java.io.Serializable;
+import java.util.Date;
+
 import javax.persistence.*;
+
+import lombok.AllArgsConstructor;
 
 
 /**
  * The persistent class for the liquidacion database table.
  * 
  */
+@AllArgsConstructor
 @Entity
 @NamedQuery(name="Liquidacion.findAll", query="SELECT l FROM Liquidacion l")
 public class Liquidacion implements Serializable {
@@ -15,14 +20,14 @@ public class Liquidacion implements Serializable {
 
 	@Id
 	@Column(name="id_liquidacion")
-	private int idLiquidacion;
+	private Integer idLiquidacion;
 
-	private int basico;
+	private Integer basico;
 
-	private int bonificaciones;
+	private Integer bonificaciones;
 
 	@Column(name="horas_extra")
-	private int horasExtra;
+	private Integer horasExtra;
 
 	//bi-directional many-to-one association to Contrato
 	@ManyToOne
@@ -31,35 +36,35 @@ public class Liquidacion implements Serializable {
 	public Liquidacion() {
 	}
 
-	public int getIdLiquidacion() {
+	public Integer getIdLiquidacion() {
 		return this.idLiquidacion;
 	}
 
-	public void setIdLiquidacion(int idLiquidacion) {
+	public void setIdLiquidacion(Integer idLiquidacion) {
 		this.idLiquidacion = idLiquidacion;
 	}
 
-	public int getBasico() {
+	public Integer getBasico() {
 		return this.basico;
 	}
 
-	public void setBasico(int basico) {
+	public void setBasico(Integer basico) {
 		this.basico = basico;
 	}
 
-	public int getBonificaciones() {
+	public Integer getBonificaciones() {
 		return this.bonificaciones;
 	}
 
-	public void setBonificaciones(int bonificaciones) {
+	public void setBonificaciones(Integer bonificaciones) {
 		this.bonificaciones = bonificaciones;
 	}
 
-	public int getHorasExtra() {
+	public Integer getHorasExtra() {
 		return this.horasExtra;
 	}
 
-	public void setHorasExtra(int horasExtra) {
+	public void setHorasExtra(Integer horasExtra) {
 		this.horasExtra = horasExtra;
 	}
 

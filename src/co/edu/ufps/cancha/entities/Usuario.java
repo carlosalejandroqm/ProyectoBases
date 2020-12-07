@@ -2,6 +2,10 @@ package co.edu.ufps.cancha.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import lombok.AllArgsConstructor;
+
+import java.util.Date;
 import java.util.List;
 
 
@@ -16,7 +20,7 @@ public class Usuario implements Serializable {
 
 	@Id
 	@Column(name="id_usuario")
-	private int idUsuario;
+	private Integer idUsuario;
 
 	@Column(name="clave_usuario")
 	private String claveUsuario;
@@ -43,11 +47,19 @@ public class Usuario implements Serializable {
 	public Usuario() {
 	}
 
-	public int getIdUsuario() {
+	public Usuario(Integer idUsuario, String nombre, String claveUsuario, Cargo cargo) {
+		super();
+		this.idUsuario = idUsuario;
+		this.claveUsuario = claveUsuario;
+		this.nombre = nombre;
+		this.cargo = cargo;
+	}
+
+	public Integer getIdUsuario() {
 		return this.idUsuario;
 	}
 
-	public void setIdUsuario(int idUsuario) {
+	public void setIdUsuario(Integer idUsuario) {
 		this.idUsuario = idUsuario;
 	}
 

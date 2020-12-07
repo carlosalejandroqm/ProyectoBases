@@ -1,13 +1,18 @@
 package co.edu.ufps.cancha.entities;
 
 import java.io.Serializable;
+import java.util.Date;
+
 import javax.persistence.*;
+
+import lombok.AllArgsConstructor;
 
 
 /**
  * The persistent class for the factura database table.
  * 
  */
+@AllArgsConstructor
 @Entity
 @NamedQuery(name="Factura.findAll", query="SELECT f FROM Factura f")
 public class Factura implements Serializable {
@@ -15,10 +20,10 @@ public class Factura implements Serializable {
 
 	@Id
 	@Column(name="factura_id")
-	private int facturaId;
+	private Integer facturaId;
 
 	@Column(name="reserva_id_reserva")
-	private int reservaIdReserva;
+	private Integer reservaIdReserva;
 
 	//bi-directional many-to-one association to Cajero
 	@ManyToOne
@@ -33,19 +38,19 @@ public class Factura implements Serializable {
 	public Factura() {
 	}
 
-	public int getFacturaId() {
+	public Integer getFacturaId() {
 		return this.facturaId;
 	}
 
-	public void setFacturaId(int facturaId) {
+	public void setFacturaId(Integer facturaId) {
 		this.facturaId = facturaId;
 	}
 
-	public int getReservaIdReserva() {
+	public Integer getReservaIdReserva() {
 		return this.reservaIdReserva;
 	}
 
-	public void setReservaIdReserva(int reservaIdReserva) {
+	public void setReservaIdReserva(Integer reservaIdReserva) {
 		this.reservaIdReserva = reservaIdReserva;
 	}
 

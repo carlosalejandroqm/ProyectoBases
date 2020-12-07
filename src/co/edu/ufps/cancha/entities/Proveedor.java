@@ -2,6 +2,10 @@ package co.edu.ufps.cancha.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import lombok.AllArgsConstructor;
+
+import java.util.Date;
 import java.util.List;
 
 
@@ -9,6 +13,7 @@ import java.util.List;
  * The persistent class for the proveedor database table.
  * 
  */
+@AllArgsConstructor
 @Entity
 @NamedQuery(name="Proveedor.findAll", query="SELECT p FROM Proveedor p")
 public class Proveedor implements Serializable {
@@ -16,15 +21,15 @@ public class Proveedor implements Serializable {
 
 	@Id
 	@Column(name="id_proveedor")
-	private int idProveedor;
+	private Integer idProveedor;
 
+	private Integer rut;
+	
+	private String nombre;
+	
 	private String apellido;
 
 	private String email;
-
-	private String nombre;
-
-	private int rut;
 
 	//bi-directional many-to-one association to Compra
 	@OneToMany(mappedBy="proveedor")
@@ -37,11 +42,11 @@ public class Proveedor implements Serializable {
 	public Proveedor() {
 	}
 
-	public int getIdProveedor() {
+	public Integer getIdProveedor() {
 		return this.idProveedor;
 	}
 
-	public void setIdProveedor(int idProveedor) {
+	public void setIdProveedor(Integer idProveedor) {
 		this.idProveedor = idProveedor;
 	}
 
@@ -69,11 +74,11 @@ public class Proveedor implements Serializable {
 		this.nombre = nombre;
 	}
 
-	public int getRut() {
+	public Integer getRut() {
 		return this.rut;
 	}
 
-	public void setRut(int rut) {
+	public void setRut(Integer rut) {
 		this.rut = rut;
 	}
 

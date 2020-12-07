@@ -3,11 +3,17 @@ package co.edu.ufps.cancha.entities;
 import java.io.Serializable;
 import javax.persistence.*;
 
+import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 
 /**
  * The persistent class for the cliente database table.
  * 
  */
+@Data
+@NoArgsConstructor
 @Entity
 @NamedQuery(name="Cliente.findAll", query="SELECT c FROM Cliente c")
 public class Cliente implements Serializable {
@@ -15,7 +21,7 @@ public class Cliente implements Serializable {
 
 	@Id
 	@Column(name="id_cliente")
-	private int idCliente;
+	private Integer idCliente;
 
 	private String apellido;
 
@@ -24,7 +30,7 @@ public class Cliente implements Serializable {
 	private String nombre;
 
 	@Column(name="nro_reservas")
-	private int nroReservas;
+	private Integer nroReservas;
 
 	private String telefono;
 
@@ -32,63 +38,18 @@ public class Cliente implements Serializable {
 	@ManyToOne
 	private Usuario usuario;
 
-	public Cliente() {
-	}
-
-	public int getIdCliente() {
-		return this.idCliente;
-	}
-
-	public void setIdCliente(int idCliente) {
+	public Cliente(Integer idCliente, String nombre, String apellido, String correo, Integer nroReservas,
+			String telefono, Usuario usuario) {
+		super();
 		this.idCliente = idCliente;
-	}
-
-	public String getApellido() {
-		return this.apellido;
-	}
-
-	public void setApellido(String apellido) {
 		this.apellido = apellido;
-	}
-
-	public String getCorreo() {
-		return this.correo;
-	}
-
-	public void setCorreo(String correo) {
 		this.correo = correo;
-	}
-
-	public String getNombre() {
-		return this.nombre;
-	}
-
-	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-
-	public int getNroReservas() {
-		return this.nroReservas;
-	}
-
-	public void setNroReservas(int nroReservas) {
 		this.nroReservas = nroReservas;
-	}
-
-	public String getTelefono() {
-		return this.telefono;
-	}
-
-	public void setTelefono(String telefono) {
 		this.telefono = telefono;
-	}
-
-	public Usuario getUsuario() {
-		return this.usuario;
-	}
-
-	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
+
+	
 
 }

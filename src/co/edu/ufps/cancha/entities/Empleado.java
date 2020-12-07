@@ -2,6 +2,10 @@ package co.edu.ufps.cancha.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import lombok.AllArgsConstructor;
+
+import java.util.Date;
 import java.util.List;
 
 
@@ -9,6 +13,7 @@ import java.util.List;
  * The persistent class for the empleado database table.
  * 
  */
+@AllArgsConstructor
 @Entity
 @NamedQuery(name="Empleado.findAll", query="SELECT e FROM Empleado e")
 public class Empleado implements Serializable {
@@ -16,7 +21,7 @@ public class Empleado implements Serializable {
 
 	@Id
 	@Column(name="id_empleado")
-	private int idEmpleado;
+	private Integer idEmpleado;
 
 	private String apellido;
 
@@ -25,11 +30,11 @@ public class Empleado implements Serializable {
 	private String dni;
 
 	@Column(name="horas_extra")
-	private int horasExtra;
+	private Integer horasExtra;
 
 	private String nombre;
 
-	private int telefono;
+	private Integer telefono;
 
 	//bi-directional one-to-one association to Administrador
 	@OneToOne(mappedBy="empleado")
@@ -56,11 +61,11 @@ public class Empleado implements Serializable {
 	public Empleado() {
 	}
 
-	public int getIdEmpleado() {
+	public Integer getIdEmpleado() {
 		return this.idEmpleado;
 	}
 
-	public void setIdEmpleado(int idEmpleado) {
+	public void setIdEmpleado(Integer idEmpleado) {
 		this.idEmpleado = idEmpleado;
 	}
 
@@ -88,11 +93,11 @@ public class Empleado implements Serializable {
 		this.dni = dni;
 	}
 
-	public int getHorasExtra() {
+	public Integer getHorasExtra() {
 		return this.horasExtra;
 	}
 
-	public void setHorasExtra(int horasExtra) {
+	public void setHorasExtra(Integer horasExtra) {
 		this.horasExtra = horasExtra;
 	}
 
@@ -104,11 +109,11 @@ public class Empleado implements Serializable {
 		this.nombre = nombre;
 	}
 
-	public int getTelefono() {
+	public Integer getTelefono() {
 		return this.telefono;
 	}
 
-	public void setTelefono(int telefono) {
+	public void setTelefono(Integer telefono) {
 		this.telefono = telefono;
 	}
 
@@ -163,6 +168,23 @@ public class Empleado implements Serializable {
 	}
 
 	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public Empleado(Integer idEmpleado, String dni, String nombre, String apellido, String correo,  Integer horasExtra, 
+			Integer telefono, Administrador administrador, AdministradorBodega administradorBodega, Cargo cargoBean,
+			Usuario usuario) {
+		super();
+		this.idEmpleado = idEmpleado;
+		this.apellido = apellido;
+		this.correo = correo;
+		this.dni = dni;
+		this.horasExtra = horasExtra;
+		this.nombre = nombre;
+		this.telefono = telefono;
+		this.administrador = administrador;
+		this.administradorBodega = administradorBodega;
+		this.cargoBean = cargoBean;
 		this.usuario = usuario;
 	}
 

@@ -2,6 +2,10 @@ package co.edu.ufps.cancha.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import lombok.AllArgsConstructor;
+
+import java.util.Date;
 import java.util.List;
 
 
@@ -9,6 +13,7 @@ import java.util.List;
  * The persistent class for the producto database table.
  * 
  */
+@AllArgsConstructor
 @Entity
 @NamedQuery(name="Producto.findAll", query="SELECT p FROM Producto p")
 public class Producto implements Serializable {
@@ -16,13 +21,13 @@ public class Producto implements Serializable {
 
 	@Id
 	@Column(name="id__producto")
-	private int idProducto;
-
-	private int cantidad;
-
-	private String descripcion;
+	private Integer idProducto;
 
 	private String nombre;
+	
+	private String descripcion;
+	
+	private Integer cantidad;
 
 	//bi-directional one-to-one association to Consumible
 	@OneToOne(mappedBy="producto")
@@ -52,19 +57,19 @@ public class Producto implements Serializable {
 	public Producto() {
 	}
 
-	public int getIdProducto() {
+	public Integer getIdProducto() {
 		return this.idProducto;
 	}
 
-	public void setIdProducto(int idProducto) {
+	public void setIdProducto(Integer idProducto) {
 		this.idProducto = idProducto;
 	}
 
-	public int getCantidad() {
+	public Integer getCantidad() {
 		return this.cantidad;
 	}
 
-	public void setCantidad(int cantidad) {
+	public void setCantidad(Integer cantidad) {
 		this.cantidad = cantidad;
 	}
 

@@ -2,6 +2,9 @@ package co.edu.ufps.cancha.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import lombok.AllArgsConstructor;
+
 import java.util.Date;
 
 
@@ -9,6 +12,7 @@ import java.util.Date;
  * The persistent class for the compra database table.
  * 
  */
+@AllArgsConstructor
 @Entity
 @NamedQuery(name="Compra.findAll", query="SELECT c FROM Compra c")
 public class Compra implements Serializable {
@@ -16,16 +20,16 @@ public class Compra implements Serializable {
 
 	@Id
 	@Column(name="id_compra")
-	private int idCompra;
+	private Integer idCompra;
 
-	private int descuento;
+	private Integer descuento;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name="fecha_compra")
 	private Date fechaCompra;
 
 	@Column(name="monto_total")
-	private int montoTotal;
+	private Integer montoTotal;
 
 	//bi-directional many-to-one association to Proveedor
 	@ManyToOne
@@ -35,19 +39,19 @@ public class Compra implements Serializable {
 	public Compra() {
 	}
 
-	public int getIdCompra() {
+	public Integer getIdCompra() {
 		return this.idCompra;
 	}
 
-	public void setIdCompra(int idCompra) {
+	public void setIdCompra(Integer idCompra) {
 		this.idCompra = idCompra;
 	}
 
-	public int getDescuento() {
+	public Integer getDescuento() {
 		return this.descuento;
 	}
 
-	public void setDescuento(int descuento) {
+	public void setDescuento(Integer descuento) {
 		this.descuento = descuento;
 	}
 
@@ -59,11 +63,11 @@ public class Compra implements Serializable {
 		this.fechaCompra = fechaCompra;
 	}
 
-	public int getMontoTotal() {
+	public Integer getMontoTotal() {
 		return this.montoTotal;
 	}
 
-	public void setMontoTotal(int montoTotal) {
+	public void setMontoTotal(Integer montoTotal) {
 		this.montoTotal = montoTotal;
 	}
 

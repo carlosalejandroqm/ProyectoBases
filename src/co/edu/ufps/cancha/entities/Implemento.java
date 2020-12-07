@@ -1,13 +1,18 @@
 package co.edu.ufps.cancha.entities;
 
 import java.io.Serializable;
+import java.util.Date;
+
 import javax.persistence.*;
+
+import lombok.AllArgsConstructor;
 
 
 /**
  * The persistent class for the implemento database table.
  * 
  */
+@AllArgsConstructor
 @Entity
 @NamedQuery(name="Implemento.findAll", query="SELECT i FROM Implemento i")
 public class Implemento implements Serializable {
@@ -15,7 +20,7 @@ public class Implemento implements Serializable {
 
 	@Id
 	@Column(name="id__producto")
-	private int idProducto;
+	private Integer idProducto;
 
 	private String estado;
 
@@ -27,11 +32,11 @@ public class Implemento implements Serializable {
 	public Implemento() {
 	}
 
-	public int getIdProducto() {
+	public Integer getIdProducto() {
 		return this.idProducto;
 	}
 
-	public void setIdProducto(int idProducto) {
+	public void setIdProducto(Integer idProducto) {
 		this.idProducto = idProducto;
 	}
 

@@ -2,6 +2,9 @@ package co.edu.ufps.cancha.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import lombok.AllArgsConstructor;
+
 import java.util.Date;
 import java.util.List;
 
@@ -10,6 +13,7 @@ import java.util.List;
  * The persistent class for the contrato database table.
  * 
  */
+@AllArgsConstructor
 @Entity
 @NamedQuery(name="Contrato.findAll", query="SELECT c FROM Contrato c")
 public class Contrato implements Serializable {
@@ -17,7 +21,7 @@ public class Contrato implements Serializable {
 
 	@Id
 	@Column(name="id_contrato")
-	private int idContrato;
+	private Integer idContrato;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name="fecha_fin")
@@ -41,12 +45,20 @@ public class Contrato implements Serializable {
 
 	public Contrato() {
 	}
+	
+	public Contrato(Integer idContrato, Date fechaFin, Date fechaInicio, Empleado empleado) {
+		super();
+		this.idContrato = idContrato;
+		this.fechaFin = fechaFin;
+		this.fechaInicio = fechaInicio;
+		this.empleado = empleado;
+	}
 
-	public int getIdContrato() {
+	public Integer getIdContrato() {
 		return this.idContrato;
 	}
 
-	public void setIdContrato(int idContrato) {
+	public void setIdContrato(Integer idContrato) {
 		this.idContrato = idContrato;
 	}
 
@@ -117,5 +129,7 @@ public class Contrato implements Serializable {
 
 		return liquidacion;
 	}
+
+	
 
 }

@@ -2,6 +2,8 @@ package co.edu.ufps.cancha.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import lombok.AllArgsConstructor;
 import java.util.List;
 
 
@@ -9,6 +11,7 @@ import java.util.List;
  * The persistent class for the bodega database table.
  * 
  */
+@AllArgsConstructor
 @Entity
 @NamedQuery(name="Bodega.findAll", query="SELECT b FROM Bodega b")
 public class Bodega implements Serializable {
@@ -16,7 +19,7 @@ public class Bodega implements Serializable {
 
 	@Id
 	@Column(name="id_inventario")
-	private int idInventario;
+	private Integer idInventario;
 
 	//bi-directional many-to-one association to AdministradorBodega
 	@ManyToOne
@@ -30,11 +33,17 @@ public class Bodega implements Serializable {
 	public Bodega() {
 	}
 
-	public int getIdInventario() {
+	public Bodega(Integer idInventario, AdministradorBodega administradorBodega) {
+		super();
+		this.idInventario = idInventario;
+		this.administradorBodega = administradorBodega;
+	}
+	
+	public Integer getIdInventario() {
 		return this.idInventario;
 	}
 
-	public void setIdInventario(int idInventario) {
+	public void setIdInventario(Integer idInventario) {
 		this.idInventario = idInventario;
 	}
 
@@ -67,5 +76,6 @@ public class Bodega implements Serializable {
 
 		return producto;
 	}
+
 
 }

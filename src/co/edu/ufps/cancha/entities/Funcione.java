@@ -1,13 +1,18 @@
 package co.edu.ufps.cancha.entities;
 
 import java.io.Serializable;
+import java.util.Date;
+
 import javax.persistence.*;
+
+import lombok.AllArgsConstructor;
 
 
 /**
  * The persistent class for the funciones database table.
  * 
  */
+@AllArgsConstructor
 @Entity
 @Table(name="funciones")
 @NamedQuery(name="Funcione.findAll", query="SELECT f FROM Funcione f")
@@ -16,7 +21,7 @@ public class Funcione implements Serializable {
 
 	@Id
 	@Column(name="id_funciones")
-	private int idFunciones;
+	private Integer idFunciones;
 
 	private String concepto;
 
@@ -29,11 +34,11 @@ public class Funcione implements Serializable {
 	public Funcione() {
 	}
 
-	public int getIdFunciones() {
+	public Integer getIdFunciones() {
 		return this.idFunciones;
 	}
 
-	public void setIdFunciones(int idFunciones) {
+	public void setIdFunciones(Integer idFunciones) {
 		this.idFunciones = idFunciones;
 	}
 

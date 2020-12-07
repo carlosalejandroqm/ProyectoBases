@@ -2,6 +2,11 @@ package co.edu.ufps.cancha.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.List;
 
 
@@ -9,6 +14,7 @@ import java.util.List;
  * The persistent class for the cargo database table.
  * 
  */
+@AllArgsConstructor
 @Entity
 @NamedQuery(name="Cargo.findAll", query="SELECT c FROM Cargo c")
 public class Cargo implements Serializable {
@@ -16,7 +22,7 @@ public class Cargo implements Serializable {
 
 	@Id
 	@Column(name="id_cargo")
-	private int idCargo;
+	private Integer idCargo;
 
 	private String descripcion;
 
@@ -30,12 +36,18 @@ public class Cargo implements Serializable {
 
 	public Cargo() {
 	}
-
-	public int getIdCargo() {
+	
+	public Cargo(Integer idCargo, String descripcion) {
+		super();
+		this.idCargo = idCargo;
+		this.descripcion = descripcion;
+	}
+	
+	public Integer getIdCargo() {
 		return this.idCargo;
 	}
 
-	public void setIdCargo(int idCargo) {
+	public void setIdCargo(Integer idCargo) {
 		this.idCargo = idCargo;
 	}
 

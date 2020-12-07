@@ -2,6 +2,9 @@ package co.edu.ufps.cancha.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import lombok.AllArgsConstructor;
+
 import java.util.Date;
 
 
@@ -9,6 +12,7 @@ import java.util.Date;
  * The persistent class for the consumible database table.
  * 
  */
+@AllArgsConstructor
 @Entity
 @NamedQuery(name="Consumible.findAll", query="SELECT c FROM Consumible c")
 public class Consumible implements Serializable {
@@ -16,13 +20,13 @@ public class Consumible implements Serializable {
 
 	@Id
 	@Column(name="id__producto")
-	private int idProducto;
+	private Integer idProducto;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name="fecha_vencimiento")
 	private Date fechaVencimiento;
 
-	private int precio;
+	private Integer precio;
 
 	//bi-directional one-to-one association to Producto
 	@OneToOne
@@ -32,11 +36,11 @@ public class Consumible implements Serializable {
 	public Consumible() {
 	}
 
-	public int getIdProducto() {
+	public Integer getIdProducto() {
 		return this.idProducto;
 	}
 
-	public void setIdProducto(int idProducto) {
+	public void setIdProducto(Integer idProducto) {
 		this.idProducto = idProducto;
 	}
 
@@ -48,11 +52,11 @@ public class Consumible implements Serializable {
 		this.fechaVencimiento = fechaVencimiento;
 	}
 
-	public int getPrecio() {
+	public Integer getPrecio() {
 		return this.precio;
 	}
 
-	public void setPrecio(int precio) {
+	public void setPrecio(Integer precio) {
 		this.precio = precio;
 	}
 

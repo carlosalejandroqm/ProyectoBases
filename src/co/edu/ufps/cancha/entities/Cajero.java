@@ -2,6 +2,11 @@ package co.edu.ufps.cancha.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.List;
 
 
@@ -9,6 +14,7 @@ import java.util.List;
  * The persistent class for the cajero database table.
  * 
  */
+@AllArgsConstructor
 @Entity
 @NamedQuery(name="Cajero.findAll", query="SELECT c FROM Cajero c")
 public class Cajero implements Serializable {
@@ -16,7 +22,7 @@ public class Cajero implements Serializable {
 
 	@Id
 	@Column(name="id_empleado")
-	private int idEmpleado;
+	private Integer idEmpleado;
 
 	//bi-directional many-to-one association to Factura
 	@OneToMany(mappedBy="cajero")
@@ -24,12 +30,16 @@ public class Cajero implements Serializable {
 
 	public Cajero() {
 	}
+	
+	public Cajero(Integer idEmpleado) {
+		this.idEmpleado=idEmpleado;
+	}
 
-	public int getIdEmpleado() {
+	public Integer getIdEmpleado() {
 		return this.idEmpleado;
 	}
 
-	public void setIdEmpleado(int idEmpleado) {
+	public void setIdEmpleado(Integer idEmpleado) {
 		this.idEmpleado = idEmpleado;
 	}
 
@@ -54,5 +64,4 @@ public class Cajero implements Serializable {
 
 		return factura;
 	}
-
 }
