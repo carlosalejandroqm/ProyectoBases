@@ -53,7 +53,7 @@
             </div>
         </div>
     </div>
-    <footer class="footer py-2>
+    <footer class="footer py-2">
         <div class=" container">
         <div class="row">
             <div class="col col-sm-10">
