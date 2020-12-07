@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/estilosLogin.css">
+    <link rel="stylesheet" type="text/css" href="css/estilosLogin.css">
+    <link rel="stylesheet" href="css/card.css">
 
     <!-- fuentes -->
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet" media="">
@@ -32,6 +34,7 @@
         <a class="navbar-brand" href="#"><img src="img/logo.png" alt="logo" class="d-inline-block aling-top"
                 style="width:40px;">
         </a>
+        <p>Administrador</p>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -46,7 +49,7 @@
     </nav>
     <center>
         <div class="row">
-            <!-- administrador -->
+            <!-- clientes -->
             <div class="col-xs-6 col-sm-6 col-md-4">
                 <div class="image-flip">
                     <div class="mainflip flip-0">
@@ -54,7 +57,7 @@
                             <div class="card">
                                 <div class="card-body text-center">
                                     <p><img class=" img-fluid" src="img/adm.jpeg" alt="card image"></p>
-                                    <h4 class="card-title">Login Administrador</h4>
+                                    <h4 class="card-title">Clientes</h4>
                                     <p class="card-text"></p>
                                     <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i
                                             class="fa fa-plus"></i></a>
@@ -64,11 +67,10 @@
                         <div class="backside">
                             <div class="card">
                                 <div class="card-body text-center mt-4">
-                                    <h4 class="card-title">Si eres Administrador de Las canchas sinteticas la Catedral
-                                        del
-                                        fútbol
+                                    <h4 class="card-title">
+                                        Administrar clientes
                                     </h4>
-                                    <a href="loginAdministrador.html"><button type="button" class="btn btn-primary">Ir
+                                    <a href="registroCliente.html"><button type="button" class="btn btn-primary">Ir
                                             al Login</button></a>
                                 </div>
                             </div>
@@ -77,7 +79,7 @@
                 </div>
             </div>
             <!-- ./Team member -->
-            <!-- administrador bodega -->
+            <!-- productos  -->
             <div class="col-xs-6 col-sm-6 col-md-4">
                 <div class="image-flip">
                     <div class="mainflip flip-0">
@@ -85,7 +87,7 @@
                             <div class="card">
                                 <div class="card-body text-center">
                                     <p><img class=" img-fluid" src="img/bodega.jpg" alt="card image"></p>
-                                    <h4 class="card-title">Login Administrador Bodega</h4>
+                                    <h4 class="card-title">Productos</h4>
                                     <p class="card-text"></p>
                                     <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i
                                             class="fa fa-plus"></i></a>
@@ -95,11 +97,10 @@
                         <div class="backside">
                             <div class="card">
                                 <div class="card-body text-center mt-4">
-                                    <h4 class="card-title">Si eres Administrador de las bodegas y el inventario de Las
-                                        canchas sinteticas la Catedral del
-                                        fútbol
+                                    <h4 class="card-title">
+                                        Administrar los productos de la empresa
                                     </h4>
-                                    <a href="#"><button type="button" class="btn btn-primary">Ir al Login</button></a>
+                                    <a href="productos/listarProducto.html"><button type="button" class="btn btn-primary">Ir al Login</button></a>
                                 </div>
                             </div>
                         </div>
@@ -115,7 +116,7 @@
                             <div class="card">
                                 <div class="card-body text-center">
                                     <p><img class=" img-fluid" src="img/cliente.jpg" alt="card image"></p>
-                                    <h4 class="card-title">Login Cliente</h4>
+                                    <h4 class="card-title">Rerservas</h4>
                                     <p class="card-text"></p>
                                     <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i
                                             class="fa fa-plus"></i></a>
@@ -126,9 +127,9 @@
                             <div class="card">
                                 <div class="card-body text-center mt-4">
                                     <h4 class="card-title">
-                                        Si eres cliente de La Catedral del futbol o te interesa serlo
+                                        Administrar las reservas realizadas
                                     </h4>
-                                    <a href="loginCliente.html"><button type="button" class="btn btn-primary">Ir al
+                                    <a href="reservas/listarReserva.html"><button type="button" class="btn btn-primary">Ir al
                                             Login</button></a>
                                 </div>
                             </div>
