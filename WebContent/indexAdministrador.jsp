@@ -56,8 +56,7 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="img/adm.jpeg" alt="card image"></p>
-                                    <h4 class="card-title">Clientes</h4>
+                                    <h4 class="card-title">Administrar Clientes</h4>
                                     <p class="card-text"></p>
                                     <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i
                                             class="fa fa-plus"></i></a>
@@ -68,10 +67,9 @@
                             <div class="card">
                                 <div class="card-body text-center mt-4">
                                     <h4 class="card-title">
-                                        Administrar clientes
+                                        Listar Clientes
                                     </h4>
-                                    <a href="registroCliente.html"><button type="button" class="btn btn-primary">Ir
-                                            al Login</button></a>
+                                    <a href="/ORM/listaClientes.jsp"><button type="button" class="btn btn-primary">Listar</button></a>
                                 </div>
                             </div>
                         </div>
@@ -86,7 +84,6 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="img/bodega.jpg" alt="card image"></p>
                                     <h4 class="card-title">Productos</h4>
                                     <p class="card-text"></p>
                                     <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i
@@ -115,7 +112,6 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="img/cliente.jpg" alt="card image"></p>
                                     <h4 class="card-title">Rerservas</h4>
                                     <p class="card-text"></p>
                                     <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i
@@ -137,6 +133,7 @@
                     </div>
                 </div>
             </div>
+            
             <!-- ./Team member -->
         </div>
     </center>

@@ -31,14 +31,15 @@
         <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto">
                 <h3 class="login-heading mb-4">Portal Administrador</h3>
-                <form>
+                <form action="${pageContext.request.contextPath}/AdministradorServlet?action=login"
+					method="post">
                     <div class="form-label-group">
-                        <input type="email" id="inputEmail"  name="nombre" class="form-control" placeholder="Digite correo o usuario"
+                        <input type="text" id="inputEmail"  name="nombre" class="form-control" placeholder="Digite correo o usuario"
                             required autofocus>
                         <label for="inputEmail">Nombre Administrador</label>
                     </div>
                     <div class="form-label-group">
-                        <input type="password" id="inputPassword"  name="contraseña" class="form-control"
+                        <input type="password" id="inputPassword"  name="pass" class="form-control"
                             placeholder="Digite su Contraseña" required>
                         <label for="inputPassword">Contraseña Administrador</label>
                     </div>

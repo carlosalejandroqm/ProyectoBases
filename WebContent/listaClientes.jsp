@@ -14,16 +14,15 @@
 <meta name="description" content="login para usuarios y administradores">
 <title>Listado de reservas</title>
 
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-	crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="../css/estilosLogin.css">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/estilosLogin.css">
 
-<!-- fuentes -->
-<link
-	href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap"
-	rel="stylesheet" media="">
+    <link rel="stylesheet" href="css/card.css">
+
+    <!-- fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet" media="">
+
 </head>
 
 <body>

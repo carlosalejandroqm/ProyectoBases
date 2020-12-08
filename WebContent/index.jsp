@@ -41,7 +41,7 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="img/adm.jpeg" alt="card image"></p>
+                                   
                                     <h4 class="card-title">Login Administrador</h4>
                                     <p class="card-text"></p>
                                     <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i
@@ -54,9 +54,9 @@
                                 <div class="card-body text-center mt-4">
                                     <h4 class="card-title">Si eres Administrador de Las canchas sinteticas la Catedral
                                         del
-                                        fútbol
+                                        futbol
                                     </h4>
-                                    <a href="loginAdministrador.html"><button type="button" class="btn btn-primary">Ir
+                                    <a href="loginAdministrador.jsp"><button type="button" class="btn btn-primary">Ir
                                             al Login</button></a>
                                 </div>
                             </div>
@@ -72,7 +72,7 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="img/bodega.jpg" alt="card image"></p>
+                                    
                                     <h4 class="card-title">Login Administrador Bodega</h4>
                                     <p class="card-text"></p>
                                     <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i
@@ -85,7 +85,7 @@
                                 <div class="card-body text-center mt-4">
                                     <h4 class="card-title">Si eres Administrador de las bodegas y el inventario de Las
                                         canchas sinteticas la Catedral del
-                                        fútbol
+                                        futbol
                                     </h4>
                                     <a href="#"><button type="button" class="btn btn-primary">Ir al Login</button></a>
                                 </div>
@@ -102,7 +102,7 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="img/cliente.jpg" alt="card image"></p>
+                                    
                                     <h4 class="card-title">Login Cliente</h4>
                                     <p class="card-text"></p>
                                     <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i
@@ -116,7 +116,7 @@
                                     <h4 class="card-title">
                                         Si eres cliente de La Catedral del futbol o te interesa serlo
                                     </h4>
-                                    <a href="loginCliente.html"><button type="button" class="btn btn-primary">Ir al
+                                    <a href="loginCliente.jsp"><button type="button" class="btn btn-primary">Ir al
                                             Login</button></a>
                                 </div>
                             </div>
@@ -173,7 +173,7 @@
                                 <Strong> Enlaces de Interes</Strong>
                             </h4>
                             <ul class="list-unstyled">
-                                <li class="text-center"><a href="contactenos.html">Ayuda</a></li>
+                                <li class="text-center"><a href="contactenos.jsp">Ayuda</a></li>
                                 <li class="text-center"><a href="">Historia de Canchas la catedral</a></li>
 
                             </ul>

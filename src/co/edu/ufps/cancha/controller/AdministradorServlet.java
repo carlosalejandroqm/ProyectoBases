@@ -18,6 +18,7 @@ import co.edu.ufps.cancha.dao.CargoDAO;
 import co.edu.ufps.cancha.dao.EmpleadoDAO;
 import co.edu.ufps.cancha.dao.UsuarioDAO;
 import co.edu.ufps.cancha.entities.Cargo;
+import co.edu.ufps.cancha.entities.Cliente;
 import co.edu.ufps.cancha.entities.Empleado;
 import co.edu.ufps.cancha.entities.Administrador;
 import co.edu.ufps.cancha.entities.Cajero;
@@ -75,6 +76,10 @@ public class AdministradorServlet extends HttpServlet {
 
 			case "editar":
 				update(request, response);
+				break;
+				
+			case "login":
+				login(request, response);
 				break;
 
 			default:
@@ -202,4 +207,28 @@ public class AdministradorServlet extends HttpServlet {
 		dispatcher.forward(request, response);
 	}
 
+	private void login(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, IOException, ServletException {
+
+		List<Administrador> list = adminDao.list();
+
+		RequestDispatcher dispatcher = null;
+		String nombre = request.getParameter("nombre");
+		String pass = request.getParameter("pass");
+		boolean existe = false;
+		for (Administrador a : list) {
+			Empleado e = eDao.find(a.getIdEmpleado());
+			if (e.getUsuario().getNombre().equals(nombre) && e.getUsuario().getClaveUsuario().equals(pass)) {
+				existe = true;
+			}
+		}
+		if (existe) {
+			dispatcher = request.getRequestDispatcher("indexAdministrador.jsp");
+		} else {
+			dispatcher = request.getRequestDispatcher("loginAdministrador.jsp");
+			String mensaje = "No está registrado";
+			request.setAttribute("mensaje", mensaje);
+		}
+		dispatcher.forward(request, response);
+	}
 }

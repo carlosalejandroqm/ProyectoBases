@@ -32,8 +32,7 @@
     </header>
     <!-- barra de navegacion -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-toggleable-sm sticky-top">
-        <a class="navbar-brand" href="#"><img src="img/logo.png" alt="logo" class="d-inline-block aling-top"
-                style="width:40px;">
+        <a class="navbar-brand" href="#">
         </a>
         <p>Cliente</p>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
@@ -45,6 +44,7 @@
                 <a class="nav-link " href="html/marca.html">Reserva</a>
                 <a class="nav-link " href="html/categoria.html">Productos</a>
                 <a class="nav-link" href="php/producto.php">Acerca de </a>
+                <a class="nav-link" href="../ORM/loginCliente.jsp">Salir </a>
             </div>
         </div>
     </nav>
@@ -57,7 +57,7 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="img/reserva.jpg" alt="card image"></p>
+                                   
                                     <h4 class="card-title">Reservas</h4>
                                     <p class="card-text"></p>
                                     <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i
@@ -88,7 +88,7 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="img/productos.jpeg" alt="card image"></p>
+                                   
                                     <h4 class="card-title">Productos</h4>
                                     <p class="card-text"></p>
                                     <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i
@@ -117,7 +117,7 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="img/eventos.jpeg" alt="card image"></p>
+                                    
                                     <h4 class="card-title">Eventos</h4>
                                     <p class="card-text"></p>
                                     <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i

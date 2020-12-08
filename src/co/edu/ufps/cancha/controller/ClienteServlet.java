@@ -175,7 +175,7 @@ public class ClienteServlet extends HttpServlet {
 		Cliente cliente = clienteDao.find(id);
 		Usuario usuario = cliente.getUsuario();
 		UsuarioDAO uDao = new UsuarioDAO();
-clienteDao.delete(cliente);
+		clienteDao.delete(cliente);
 		uDao.delete(usuario);
 		
 
