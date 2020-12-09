@@ -98,7 +98,7 @@
                         <!--Column1-->
                         <div class="footer-pad">
                             <h4 class="text-center">
-                                <Strong>Â¿Que Somos?</Strong>
+                                <Strong>¿Que Somos?</Strong>
                             </h4>
                             <ul class="list-unstyled">
                                 <li class="text-center">

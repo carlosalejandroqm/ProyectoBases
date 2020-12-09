@@ -37,13 +37,19 @@
             <tr>
                                      
             <th>Nombre</th>
-            <th>Descripcion</th>
-            <th>Precio</th>
+            <th>Fecha Inicio</th>
+            <th>Fecha Salida</th>
+            <th>Tipo Cancha</th>
             <th>Editar</th>
             <th>Eliminar</th>
             </tr>
             </thead>
-            <tbody>                                      
+            <tbody> 
+            <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>                                     
             <td class="text-center">
             <a data-toggle="modal" data-target="#exampleModal" href="#" onclick="">
             <i class="fas fa-edit"></i></a></td>
@@ -54,7 +60,7 @@
           </tbody>
           </table>
           <div style="margin-bottom: 15px;">
-                 <a href="crearReserva.html"><button type="submit" class="btn btn-success" id="listado">Realizar Reserva</button></a>
+                 <a href="crearReserva.jsp"><button type="submit" class="btn btn-success" id="listado">Realizar Reserva</button></a>
           </div>
       </div>
       <!--Modal-->

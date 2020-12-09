@@ -15,6 +15,7 @@ import java.util.List;
  */
 @AllArgsConstructor
 @Entity
+@Table(name="proveedor")
 @NamedQuery(name="Proveedor.findAll", query="SELECT p FROM Proveedor p")
 public class Proveedor implements Serializable {
 	private static final long serialVersionUID = 1L;

@@ -15,6 +15,7 @@ import java.util.List;
  */
 @AllArgsConstructor
 @Entity
+@Table(name="contrato")
 @NamedQuery(name="Contrato.findAll", query="SELECT c FROM Contrato c")
 public class Contrato implements Serializable {
 	private static final long serialVersionUID = 1L;

@@ -14,6 +14,7 @@ import java.util.Date;
  */
 @AllArgsConstructor
 @Entity
+@Table(name="reserva")
 @NamedQuery(name="Reserva.findAll", query="SELECT r FROM Reserva r")
 public class Reserva implements Serializable {
 	private static final long serialVersionUID = 1L;

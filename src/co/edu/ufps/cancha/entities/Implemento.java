@@ -14,6 +14,7 @@ import lombok.AllArgsConstructor;
  */
 @AllArgsConstructor
 @Entity
+@Table(name="implemento")
 @NamedQuery(name="Implemento.findAll", query="SELECT i FROM Implemento i")
 public class Implemento implements Serializable {
 	private static final long serialVersionUID = 1L;

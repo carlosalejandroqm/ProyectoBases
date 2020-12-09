@@ -56,6 +56,7 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
+                                <p><img class=" img-fluid" src="img/adm.jpeg" alt="card image"></p>
                                     <h4 class="card-title">Administrar Clientes</h4>
                                     <p class="card-text"></p>
                                     <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i
@@ -69,7 +70,7 @@
                                     <h4 class="card-title">
                                         Listar Clientes
                                     </h4>
-                                    <a href="/ORM/listaClientes.jsp"><button type="button" class="btn btn-primary">Listar</button></a>
+                                    <a href="listaClientes.jsp"><button type="button" class="btn btn-primary">Listar</button></a>
                                 </div>
                             </div>
                         </div>
@@ -84,6 +85,7 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
+                                <p><img class=" img-fluid" src="img/productos.jpeg" alt="card image"></p>
                                     <h4 class="card-title">Productos</h4>
                                     <p class="card-text"></p>
                                     <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i
@@ -97,7 +99,7 @@
                                     <h4 class="card-title">
                                         Administrar los productos de la empresa
                                     </h4>
-                                    <a href="productos/listarProducto.html"><button type="button" class="btn btn-primary">Ir al Login</button></a>
+                                    <a href="productos/listaProductos.jsp"><button type="button" class="btn btn-primary">Ver Productos</button></a>
                                 </div>
                             </div>
                         </div>
@@ -112,6 +114,7 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
+                                <p><img class=" img-fluid" src="img/reserva.jpg" alt="card image"></p>
                                     <h4 class="card-title">Rerservas</h4>
                                     <p class="card-text"></p>
                                     <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i
@@ -125,8 +128,7 @@
                                     <h4 class="card-title">
                                         Administrar las reservas realizadas
                                     </h4>
-                                    <a href="reservas/listarReserva.html"><button type="button" class="btn btn-primary">Ir al
-                                            Login</button></a>
+                                    <a href="reservas/listarReserva.jsp"><button type="button" class="btn btn-primary">Ver Reservas</button></a>
                                 </div>
                             </div>
                         </div>

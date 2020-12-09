@@ -14,6 +14,7 @@ import lombok.AllArgsConstructor;
  */
 @AllArgsConstructor
 @Entity
+@Table(name="liquidacion")
 @NamedQuery(name="Liquidacion.findAll", query="SELECT l FROM Liquidacion l")
 public class Liquidacion implements Serializable {
 	private static final long serialVersionUID = 1L;

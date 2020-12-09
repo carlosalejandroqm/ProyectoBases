@@ -14,6 +14,7 @@ import java.util.Date;
  */
 @AllArgsConstructor
 @Entity
+@Table(name="consumible")
 @NamedQuery(name="Consumible.findAll", query="SELECT c FROM Consumible c")
 public class Consumible implements Serializable {
 	private static final long serialVersionUID = 1L;

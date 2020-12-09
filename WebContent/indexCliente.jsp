@@ -44,7 +44,7 @@
                 <a class="nav-link " href="html/marca.html">Reserva</a>
                 <a class="nav-link " href="html/categoria.html">Productos</a>
                 <a class="nav-link" href="php/producto.php">Acerca de </a>
-                <a class="nav-link" href="../ORM/loginCliente.jsp">Salir </a>
+                <a class="nav-link" href="../loginCliente.jsp">Salir </a>
             </div>
         </div>
     </nav>
@@ -57,7 +57,7 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                   
+                                    <p><img class=" img-fluid" src="img/reserva.jpg" alt="card image"></p>
                                     <h4 class="card-title">Reservas</h4>
                                     <p class="card-text"></p>
                                     <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i
@@ -88,7 +88,7 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                   
+                                   <p><img class=" img-fluid" src="img/productos.jpeg" alt="card image"></p>
                                     <h4 class="card-title">Productos</h4>
                                     <p class="card-text"></p>
                                     <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i
@@ -102,7 +102,7 @@
                                     <h4 class="card-title">
                                         Para realizar la compra y ver existencia de productos 
                                     </h4>
-                                    <a href="productos/listarProdUsuario.jsp"><button type="button" class="btn btn-primary">Ir a productos</button></a>
+                                    <a href="productos/listarProductoUsuario.jsp"><button type="button" class="btn btn-primary">Ir a productos</button></a>
                                 </div>
                             </div>
                         </div>
@@ -117,7 +117,7 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    
+                                    <p><img class=" img-fluid" src="img/eventos.jpeg" alt="card image"></p>
                                     <h4 class="card-title">Eventos</h4>
                                     <p class="card-text"></p>
                                     <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i
@@ -171,7 +171,7 @@
                         <!--Column1-->
                         <div class="footer-pad">
                             <h4 class="text-center">
-                                <Strong>Â¿Que Somos?</Strong>
+                                <Strong>¿Que Somos?</Strong>
                             </h4>
                             <ul class="list-unstyled">
                                 <li class="text-center">

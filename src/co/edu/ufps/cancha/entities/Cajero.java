@@ -16,6 +16,7 @@ import java.util.List;
  */
 @AllArgsConstructor
 @Entity
+@Table(name="cajero")
 @NamedQuery(name="Cajero.findAll", query="SELECT c FROM Cajero c")
 public class Cajero implements Serializable {
 	private static final long serialVersionUID = 1L;

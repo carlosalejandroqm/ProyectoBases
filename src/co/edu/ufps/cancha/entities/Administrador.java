@@ -16,6 +16,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name="administrador")
 @NamedQuery(name="Administrador.findAll", query="SELECT a FROM Administrador a")
 public class Administrador implements Serializable {
 	private static final long serialVersionUID = 1L;

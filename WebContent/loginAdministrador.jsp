@@ -40,13 +40,13 @@
                     </div>
                     <div class="form-label-group">
                         <input type="password" id="inputPassword"  name="pass" class="form-control"
-                            placeholder="Digite su ContraseÃ±a" required>
-                        <label for="inputPassword">ContraseÃ±a Administrador</label>
+                            placeholder="Digite su Contraseña" required>
+                        <label for="inputPassword">Contraseña Administrador</label>
                     </div>
 
                     <div class="custom-control custom-checkbox mb-3">
                         <input type="checkbox" class="custom-control-input" id="customCheck1">
-                        <label class="custom-control-label" for="customCheck1">Recordar ContraseÃ±a</label>
+                        <label class="custom-control-label" for="customCheck1">Recordar Contraseña</label>
                     </div>
                     <a href="indexAdministrador.jsp">
                     <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
@@ -84,7 +84,7 @@
                         <!--Column1-->
                         <div class="footer-pad">
                             <h4 class="text-center">
-                                <Strong>Â¿Que Somos?</Strong>
+                                <Strong>¿Que Somos?</Strong>
                             </h4>
                             <ul class="list-unstyled">
                                 <li class="text-center">

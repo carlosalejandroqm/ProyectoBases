@@ -14,6 +14,7 @@ import lombok.AllArgsConstructor;
  */
 @AllArgsConstructor
 @Entity
+@Table(name="factura")
 @NamedQuery(name="Factura.findAll", query="SELECT f FROM Factura f")
 public class Factura implements Serializable {
 	private static final long serialVersionUID = 1L;
